@@ -13,10 +13,17 @@ require 'spec_helper'
 
 describe User do
 
+<<<<<<< HEAD
   before do
     @user = User.new(name: "Example User", email: "user@example.com", 
                      password: "foobar", password_confirmation: "foobar")
   end
+=======
+ before do
+  @user = User.new(name: "Example User", email: "user@example.com", 
+                   password: "foobar", password_confirmation: "foobar")
+end
+>>>>>>> modeling-users
 
   subject { @user }
 
@@ -27,15 +34,25 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
 
+<<<<<<< HEAD
   it { should be_valid }
+=======
+ it { should be_valid }
+>>>>>>> modeling-users
 
   describe "when name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
   end
+<<<<<<< HEAD
   
   describe "when email is not present" do  
     before { @user.email = " "}    
+=======
+
+  describe "when email is not present" do
+    before { @user.email = " " }
+>>>>>>> modeling-users
     it { should_not be_valid }
   end
 
@@ -43,7 +60,10 @@ describe User do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
+<<<<<<< HEAD
   
+=======
+>>>>>>> modeling-users
 
   describe "when email format is invalid" do
     it "should be invalid" do
@@ -91,7 +111,11 @@ describe User do
     it { should_not be_valid }
   end
 
+<<<<<<< HEAD
  describe "with a password that's too short" do
+=======
+  describe "with a password that's too short" do
+>>>>>>> modeling-users
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
